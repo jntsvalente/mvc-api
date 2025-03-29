@@ -153,7 +153,16 @@ C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.d
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Dev\PROJECTS\mvc-api\Web.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
@@ -246,6 +255,7 @@ C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\Web.Api.AssemblyInfo.cs
 C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\Web.Api.csproj.CoreCompileInputs.cache
 C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\Web.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\Web.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\Web.Api.sourcelink.json
 C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\scopedcss\bundle\Web.Api.styles.css
 C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\staticwebassets.build.json
 C:\Dev\PROJECTS\mvc-api\Web.Api\obj\Debug\net9.0\staticwebassets.development.json

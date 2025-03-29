@@ -1,4 +1,4 @@
-# MVC Web API with EF Core
+# MVC Web API with Entity Framework Core
 
 MVC Web API with Entity Framework Core for robust ORM-based development.
 
@@ -7,10 +7,9 @@ What's included in this project:
 - CRUD
 - JWT authentication
 - Role-based authorization
-- Password hashing
+- Password Hashing with Salt
 - PostgreSQL
 - Fluent Mapping
-- Data Annotation
+- Validation with Data Annotation
 - Data and error handling
-- API versioning
-- Swagger DOC
+- Swagger Documentation
