@@ -3,12 +3,11 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
-using Web.Api.Data;
 using Web.Api.Interfaces;
 using Web.Api.Models;
 
 namespace Web.Api.Services;
-sealed class TokenService(IConfiguration configuration, ApiDataContext dbContext) : ITokenService
+sealed class TokenService(IConfiguration configuration, IApiDataContext dbContext) : ITokenService
 {
     public async Task<string> CreateToken(User user, CancellationToken cancellationToken)
     {
