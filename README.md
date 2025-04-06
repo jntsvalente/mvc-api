@@ -12,4 +12,5 @@ What's included in this project:
 - Fluent Mapping
 - Validation with Data Annotation
 - Data and error handling
+- Unit tests
 - Swagger Documentation
