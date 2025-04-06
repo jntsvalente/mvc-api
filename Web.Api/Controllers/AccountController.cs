@@ -22,6 +22,7 @@ public class AccountController : ControllerBase
         {
             var user = new User
             {
+                Id = Guid.NewGuid(),
                 Email = model.Email,
                 PasswordHash = passwordHasher.Hash(model.Password)
             };
@@ -83,9 +84,9 @@ public class AccountController : ControllerBase
         }
     }
 
-    [HttpPost("v1/accounts/add-role/{userId:int}")]
+    [HttpPost("v1/accounts/add-role/{userId}")]
     public async Task<IActionResult> AddRole(
-    [FromRoute] int userId,
+    [FromRoute] Guid userId,
     [FromBody] RoleIdViewModel model,
     [FromServices] IApiDataContext context,
     CancellationToken cancellationToken)
@@ -123,9 +124,9 @@ public class AccountController : ControllerBase
         }
     }
 
-    [HttpDelete("v1/accounts/delete-user/{userId:int}")]
+    [HttpDelete("v1/accounts/delete-user/{userId}")]
     public async Task<IActionResult> DeleteUser(
-        [FromRoute] int userId,
+        [FromRoute] Guid userId,
         [FromServices] IApiDataContext context,
         CancellationToken cancellationToken)
     {

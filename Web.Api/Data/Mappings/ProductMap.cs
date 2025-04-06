@@ -10,8 +10,8 @@ public class ProductMap : IEntityTypeConfiguration<Product>
         builder.ToTable("Product");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+            .ValueGeneratedNever()
+            .HasColumnType("uuid");
         builder.Property(x => x.Name)
             .IsRequired()
             .HasColumnName("Name")

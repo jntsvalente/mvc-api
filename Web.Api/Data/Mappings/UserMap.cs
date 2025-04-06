@@ -10,8 +10,8 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.ToTable("User");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+            .ValueGeneratedNever()
+            .HasColumnType("uuid");
         builder.Property(x => x.Email)
             .IsRequired()
             .HasColumnName("Email")

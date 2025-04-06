@@ -27,9 +27,9 @@ public class ProductController : ControllerBase
     }
 
     [Authorize(Roles = Role.Member)]
-    [HttpGet("v1/products/{productId:int}")]
+    [HttpGet("v1/products/{productId}")]
     public async Task<IActionResult> GetByIdAsync(
-        [FromRoute] int productId,
+        [FromRoute] Guid productId,
         [FromServices] IApiDataContext context,
         CancellationToken cancellationToken)
     {
@@ -58,12 +58,7 @@ public class ProductController : ControllerBase
             return BadRequest(new ResultViewModel<Product>(ModelState.GetErrors()));
         try
         {
-            var product = new Product
-            {
-                Name = model.Name,
-                Price = model.Price,
-                Description = model.Description
-            };
+            var product = new Product(Guid.NewGuid(), model.Name, model.Price, model.Description);
             await context.Products.AddAsync(product, cancellationToken);
             await context.SaveChangesAsync(cancellationToken);
 
@@ -80,9 +75,9 @@ public class ProductController : ControllerBase
     }
 
     [Authorize(Roles = Role.Member)]
-    [HttpPut("v1/products/{productId:int}")]
+    [HttpPut("v1/products/{productId}")]
     public async Task<IActionResult> PutAsync(
-        [FromRoute] int productId,
+        [FromRoute] Guid productId,
         [FromBody] ProductEditorViewModel model,
         [FromServices] IApiDataContext context,
         CancellationToken cancellationToken)
@@ -114,9 +109,9 @@ public class ProductController : ControllerBase
     }
 
     [Authorize(Roles = Role.Admin)]
-    [HttpDelete("v1/products/{productId:int}")]
+    [HttpDelete("v1/products/{productId}")]
     public async Task<IActionResult> DeleteAsync(
-        [FromRoute] int productId,
+        [FromRoute] Guid productId,
         [FromServices] IApiDataContext context,
         CancellationToken cancellationToken)
     {
