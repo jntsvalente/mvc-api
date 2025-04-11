@@ -1,6 +1,6 @@
-# MVC Web API with Entity Framework Core
+# MVC API
 
-MVC Web API with Entity Framework Core for robust ORM-based development.
+A project showcasing a MVC API using Entity Framework Core for robust ORM-based development.
 
 What's included in this project:
 
