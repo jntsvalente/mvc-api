@@ -93,7 +93,7 @@ public class AccountController : ControllerBase
     {
         try
         {
-            var user = await context.Users.SingleOrDefaultAsync(x => x.Id == userId, cancellationToken);
+            var user = await context.Users.AsNoTracking().SingleOrDefaultAsync(x => x.Id == userId, cancellationToken);
             if (user == null)
                 return NotFound(new ResultViewModel<string>("User not found"));
 
@@ -103,6 +103,7 @@ public class AccountController : ControllerBase
 
             var userRoleExists = await context
                 .UserRoles
+                .AsNoTracking()
                 .AnyAsync(x => x.UserId == userId && x.RoleId == model.RoleId, cancellationToken);
             if (userRoleExists)
                 return StatusCode(400, new ResultViewModel<string>("User already has this role"));
@@ -132,7 +133,7 @@ public class AccountController : ControllerBase
     {
         try
         {
-            var user = await context.Users.SingleOrDefaultAsync(x => x.Id == userId, cancellationToken);
+            var user = await context.Users.AsNoTracking().SingleOrDefaultAsync(x => x.Id == userId, cancellationToken);
 
             if (user == null)
                 return NotFound(new ResultViewModel<User>("User not found"));

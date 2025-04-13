@@ -17,7 +17,7 @@ public class ProductController : ControllerBase
     {
         try 
         {
-            var products = await context.Products.ToListAsync(cancellationToken);
+            var products = await context.Products.AsNoTracking().ToListAsync(cancellationToken);
             return Ok(new ResultViewModel<List<Product>>(products));
         }
         catch
@@ -35,7 +35,7 @@ public class ProductController : ControllerBase
     {
         try
         {
-            var product = await context.Products.SingleOrDefaultAsync(x => x.Id == productId, cancellationToken);
+            var product = await context.Products.AsNoTracking().SingleOrDefaultAsync(x => x.Id == productId, cancellationToken);
             if (product == null)
                 return NotFound(new ResultViewModel<Product>("Product not found"));
 
@@ -84,7 +84,7 @@ public class ProductController : ControllerBase
     {
         try
         {
-            var product = await context.Products.SingleOrDefaultAsync(x => x.Id == productId, cancellationToken);
+            var product = await context.Products.AsNoTracking().SingleOrDefaultAsync(x => x.Id == productId, cancellationToken);
 
             if (product == null)
                 return NotFound(new ResultViewModel<Product>("Product not found"));
@@ -117,7 +117,7 @@ public class ProductController : ControllerBase
     {
         try
         {
-            var product = await context.Products.SingleOrDefaultAsync(x => x.Id == productId, cancellationToken);
+            var product = await context.Products.AsNoTracking().SingleOrDefaultAsync(x => x.Id == productId, cancellationToken);
 
             if (product == null)
                 return NotFound(new ResultViewModel<Product>("Product not found"));
