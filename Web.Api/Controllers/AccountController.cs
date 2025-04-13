@@ -97,7 +97,7 @@ public class AccountController : ControllerBase
             if (user == null)
                 return NotFound(new ResultViewModel<string>("User not found"));
 
-            var role = await context.Roles.SingleOrDefaultAsync(x => x.Id == model.RoleId, cancellationToken);
+            var role = await context.Roles.AsNoTracking().SingleOrDefaultAsync(x => x.Id == model.RoleId, cancellationToken);
             if (role == null)
                 return NotFound(new ResultViewModel<string>("Role not found"));
 
