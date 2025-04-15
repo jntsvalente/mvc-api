@@ -65,8 +65,8 @@ public class AccountController : ControllerBase
         {
             var user = await context
                 .Users
-                .AsNoTracking()
                 .Include(x => x.Roles)
+                .AsNoTracking()
                 .SingleOrDefaultAsync(x => x.Email == model.Email, cancellationToken);
 
             if (user == null)
@@ -81,6 +81,24 @@ public class AccountController : ControllerBase
         catch
         {
             return StatusCode(500, new ResultViewModel<string>("25D85 - Internal server failure"));
+        }
+    }
+
+    [HttpGet("v1/accounts/users")]
+    public async Task<IActionResult> GetUsersAsync(
+        [FromServices] IApiDataContext context,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            var users = await context.UserRoles
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
+            return Ok(new ResultViewModel<List<UserRole>>(users));
+        }
+        catch
+        {
+            return StatusCode(500, new ResultViewModel<List<UserRole>>("ER23D - Internal server failure"));
         }
     }
 
